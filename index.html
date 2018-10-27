@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src = 'script/script.js'></script>
+        <link rel='stylesheet' href='styles/style.css'>
+    </head>
+    <body>
+
+    <div>
+        <header class="header">
+            <h1>Paint App</h1>
+        </header>
+        <main>
+            <aside class="left-panel">
+                <div class="aside-heading">Control Panel</div>
+                <div class="li-panel">
+                    <ul>
+                        <li><input type="text" placeholder="Enter color" id="changeColor"></li>
+                        <li><button id="btnPressed" class="btn">Pen</button></li>
+                        <li>
+                            <!--<input type="range">-->
+                            <input id="changeSize" type="range" value="50">
+                            <span id="size">50</span>
+                            <!--<button id="changeSizeBtn" class="btn">Change size</button>-->
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn">Figure</button>
+                                <div class="dropdown-content">
+                                        <a>Square</a>
+                                        <a>Circle</a>
+                                        <a>Hexagon</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </aside>
+            <article>
+                <div class = 'canvas-wrapper'>
+                    <canvas id= 'canvas1' width= '1000px' height = '500px'></canvas>
+                </div>
+            </article>
+        </main>
+        <footer class="footer">
+            <div>COLOR
+                <span id="showColor">: black</span>
+            </div>
+            <div>MOUSE X
+                <span id="mouseX"></span>
+            </div>
+            <div>MOUSE Y
+                <span id="mouseY"></span>
+            </div>
+        </footer>
+    </div>
+
+    </body>
+</html>
