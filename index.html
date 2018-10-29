@@ -18,33 +18,34 @@
                         <li><button id="btnPressed" class="btn">Pen</button></li>
                         <li>
                             <!--<input type="range">-->
-                            <input id="changeSize" type="range" value="50">
-                            <span id="size">50</span>
+                            <input id="changeSize" type="range" value="1">
+                            <span id="size"></span>
                             <!--<button id="changeSizeBtn" class="btn">Change size</button>-->
                         </li>
                         <li>
                             <div class="dropdown">
                                 <button class="btn">Figure</button>
                                 <div class="dropdown-content">
-                                        <a>Square</a>
-                                        <a>Circle</a>
-                                        <a>Hexagon</a>
+                                        <a id="square">Square</a>
+                                        <a id="circle">Circle</a>
+                                        <a id="hexagon">Hexagon</a>
                                 </div>
                             </div>
                         </li>
+                        <li><button id="clear" class="btn">Clear</button></li>
                     </ul>
 
                 </div>
             </aside>
             <article>
                 <div class = 'canvas-wrapper'>
-                    <canvas id= 'canvas1' width= '1000px' height = '500px'></canvas>
+                    <canvas id= 'canvas1' width= '1400px' height = '800px'></canvas>
                 </div>
             </article>
         </main>
         <footer class="footer">
             <div>COLOR
-                <span id="showColor">: black</span>
+                <span id="showColor" class="current-color" style="background: black;">: black</span>
             </div>
             <div>MOUSE X
                 <span id="mouseX"></span>
