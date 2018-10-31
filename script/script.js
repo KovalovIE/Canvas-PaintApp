@@ -12,45 +12,44 @@ function init() {
     let changeSizeBtn = document.getElementById('changeSize');
     // const class1 = document.getElementsByClassName('btn-focus');
     // console.log(class1.length)
-
+    let num = document.getElementsByClassName('btn-focus');
 
     btnPressed.addEventListener('click', buttonPressed);
     function buttonPressed() {
         btnPressed.classList.toggle('btn-focus');
         //console.log(document.getElementsByClassName('btn-focus').length)
-        let num = document.getElementsByClassName('btn-focus');
-        console.log(num.length)
-        if (num.length > 0) {
-            canvas.addEventListener('mousedown', mouseDownHandler);
+    }
+    console.log(num.length)
 
-            function mouseDownHandler(event) {
-                const canvas = event.target;
-                if (canvas && canvas.getContext) {
-                    const ctx = canvas.getContext('2d');
-                    ctx.lineWidth = lineWidth;
-                    changeSizeBtn.addEventListener('mousemove', updateSize);
-                    function updateSize() {
-                        var sizeInputRange = document.getElementById("changeSize").value;
-                        //console.log(sizeInputRange)
-                        document.getElementById("size").innerHTML = sizeInputRange;
-                        ctx.lineWidth = sizeInputRange;
-                    }
-                    ctx.strokeStyle = strokeColor;
-                    ctx.lineTo(event.offsetX, event.offsetY);
-                    ctx.stroke()
+    canvas.addEventListener('mousedown', mouseDownHandler);
+    function mouseDownHandler(event) {
+        // if () {
+            const canvas = event.target;
+            if (canvas && canvas.getContext && num.length > 0) {
+                const ctx = canvas.getContext('2d');
+                ctx.lineWidth = lineWidth;
+                ctx.lineCap = "round"
+                changeSizeBtn.addEventListener('mousemove', updateSize);
+                function updateSize() {
+                    var sizeInputRange = document.getElementById("changeSize").value;
+                    //console.log(sizeInputRange)
+                    document.getElementById("size").innerHTML = sizeInputRange;
+                    ctx.lineWidth = sizeInputRange;
                 }
-                const mouseX = document.getElementById('mouseX');
-                mouseX.innerHTML = `: ${event.clientX}`;
-                const mouseY = document.getElementById('mouseY');
-                mouseY.innerHTML = `: ${event.clientY}`;
-                canvas.addEventListener('mousemove', mouseMoveHandler);
-
-            };
+                ctx.strokeStyle = strokeColor;
+                ctx.lineTo(event.offsetX, event.offsetY);
+                ctx.stroke()
+            }
+            const mouseX = document.getElementById('mouseX');
+            mouseX.innerHTML = `: ${event.clientX}`;
+            const mouseY = document.getElementById('mouseY');
+            mouseY.innerHTML = `: ${event.clientY}`;
+            canvas.addEventListener('mousemove', mouseMoveHandler);
 
             function mouseMoveHandler(event) {
                 const canvas = event.target;
 
-                if (canvas && canvas.getContext) {
+                if (canvas && canvas.getContext && num.length > 0) {
                     const ctx = canvas.getContext('2d');
                     ctx.lineWidth = lineWidth;
                     changeSizeBtn.addEventListener('mousemove', updateSize);
@@ -60,12 +59,15 @@ function init() {
                         document.getElementById("size").innerHTML = sizeInputRange;
                         ctx.lineWidth = sizeInputRange;
                     }
-
-                    //console.log(ctx.lineWidth)
-                    // ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.strokeStyle = strokeColor;
+                    ctx.beginPath();
+                    ctx.moveTo(event.offsetX, event.offsetY);
+                    ctx.lineCap = "round"
                     ctx.lineTo(event.offsetX, event.offsetY);
-                    ctx.stroke()
+                    ctx.stroke();
+
+                    ctx.strokeStyle = strokeColor;
+                    // ctx.lineTo(event.offsetX, event.offsetY);
+                    // ctx.stroke()
                 }
                 const mouseX = document.getElementById('mouseX');
                 mouseX.innerHTML = `: ${event.clientX}`;
@@ -76,7 +78,7 @@ function init() {
 
             function mouseUpHandler(event) {
                 const canvas = event.target;
-                if (canvas && canvas.getContext) {
+                if (canvas && canvas.getContext && num.length > 0) {
                     const ctx = canvas.getContext('2d');
                     ctx.lineWidth = lineWidth;
                     changeSizeBtn.addEventListener('mousemove', updateSize);
@@ -87,18 +89,20 @@ function init() {
                         //localStorage.setItem('lineWidth', ctx.lineWidth)
                     }
                     ctx.strokeStyle = strokeColor;
+                    ctx.lineCap = "round"
                     ctx.lineTo(event.offsetX, event.offsetY);
                     ctx.stroke()
                 }
                 canvas.removeEventListener('mousemove', mouseMoveHandler);
             };
-        } else if (num.length === 0) {
-            console.log('press button PEN')
-            canvas.removeEventListener('mousedown', mouseDownHandler);
-            canvas.removeEventListener('mousemove', mouseDownHandler);
-            canvas.removeEventListener('mouseup', mouseDownHandler);
-        }
-    }
+        // } else if (num.length === 0) {
+        //     console.log('press button PEN')
+        //     canvas.removeEventListener('mousedown', mouseDownHandler);
+        //     canvas.removeEventListener('mousemove', mouseDownHandler);
+        //     canvas.removeEventListener('mouseup', mouseDownHandler);
+        // }
+    };
+
 
     input.addEventListener('keypress', changeColor);
     function changeColor(event) {
