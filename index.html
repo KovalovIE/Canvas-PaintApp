@@ -1,7 +1,7 @@
 <html>
     <head>
-        <script src = 'script/script.js'></script>
         <link rel='stylesheet' href='styles/style.css'>
+        <script src ='script/script2.js'></script>
     </head>
     <body>
 
@@ -17,10 +17,8 @@
                         <li><input type="text" placeholder="Enter color" id="changeColor"></li>
                         <li><button id="btnPressed" class="btn">Pen</button></li>
                         <li>
-                            <!--<input type="range">-->
-                            <input id="changeSize" type="range" value="1">
+                            <input id="changeSize" type="range" value="50">
                             <span id="size"></span>
-                            <!--<button id="changeSizeBtn" class="btn">Change size</button>-->
                         </li>
                         <li>
                             <div class="dropdown">
@@ -38,8 +36,13 @@
                 </div>
             </aside>
             <article>
+                <section class="tab-panel">
+                    <div class="add-tab-btn" id="addNewTab">+</div>
+                    <div id="canvasTabSection">
+                    </div>
+                </section>
                 <div class = 'canvas-wrapper'>
-                    <canvas id= 'canvas1' width= '1400px' height = '800px'></canvas>
+                    <canvas id= 'canvas1' width= '700px' height = '600px'></canvas>
                 </div>
             </article>
         </main>
