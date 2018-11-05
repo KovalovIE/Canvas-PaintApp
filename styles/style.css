@@ -135,6 +135,10 @@ footer div {
     min-height: initial;
     min-width: initial;
 }
+/*.canvas-tabs {*/
+    /*width: 1400px;*/
+    /*height: 790px;*/
+/*}*/
 
 .dropdown {
     position: relative;

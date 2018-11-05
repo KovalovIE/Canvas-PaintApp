@@ -22,9 +22,9 @@ function init() {
 }
 
 function addEventListeners(canvas) {
-    console.log('ddd')
     var currentCanvas = localStorage.getItem('canvas') || 'canvas1';
-    var canvas = document.getElementById(currentCanvas)
+    var canvas = document.getElementById(currentCanvas);
+    console.log(canvas)
     canvas.addEventListener('mousedown', mouseDownHandler);
     document.getElementById('btnPressed').addEventListener('click', buttonPressed);
 
@@ -193,7 +193,7 @@ function clearCanvas() {
 
 
 function addNewTabFunc() {
-    console.log('aaa')
+    //console.log('aaa')
     const canvasTabSection = document.getElementById('canvasTabSection');
     const canvasWrap = document.getElementById('canvas-wrapper');
 
@@ -205,7 +205,7 @@ function addNewTabFunc() {
 
     div.classList.add('tab-btn');
     div.setAttribute('onclick', 'findThisElement()');
-    div.innerText = 'Tab ' + canvasTabSection.children.length;
+    div.innerText = 'Tab' + canvasTabSection.children.length;
     numDiv = 'div' + canvasTabSection.children.length;
     div.setAttribute('id', numDiv);
 
@@ -218,7 +218,7 @@ function addNewTabFunc() {
 }
 
 function findThisElement() {
-    console.log('bbb')
+    //console.log('bbb')
     let tabs = document.querySelectorAll('.tab-btn');
     for (i = 0; i < tabs.length; i++) {
         tabs[i].addEventListener('click', findTabsText)
@@ -226,15 +226,22 @@ function findThisElement() {
 }
 
 function findTabsText() {
-    console.log('ccc')
+    //console.log('ccc')
     let tabsText = this.innerText;
-    tabsText = tabsText.charAt(tabsText.length-1);
-    //console.log(tabsText)
+
+    let tabTextLastsChar = String(tabsText.charAt(tabsText.length-2)) + tabsText.charAt(tabsText.length-1); //поиск 2-х последних символов
+    let tabsTextNumber = parseInt(this.innerText.charAt(tabsText.length-1));
+
+    if( String(parseInt(tabTextLastsChar)).length === 2) { //если при преобразовании в строку не обрежет длину, то 2 цифры, изменяем tabsTextNumber
+        tabsTextNumber = parseInt(tabTextLastsChar);
+    }
+
     let allCanvas = document.querySelectorAll('.canvas-tabs');
     for (i = 0; i < allCanvas.length; i++) {
         allCanvas[i].style.display = 'none';
     }
-    var canvasName = 'canvas' + tabsText;
+    var canvasName = 'canvas' + tabsTextNumber; //искомый canvas по id
+    console.log(canvasName)
     document.getElementById(canvasName).style.display = 'block';
     localStorage.setItem('canvas', canvasName);
     let canvasClass = document.getElementsByClassName('canvas-tabs');
@@ -244,5 +251,4 @@ function findTabsText() {
             addEventListeners(newCanvasAddEvent)
         }
     }
-    //console.log(canvasClass)
 }
