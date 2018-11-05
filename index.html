@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel='stylesheet' href='styles/style.css'>
-        <script src ='script/script2.js'></script>
+
     </head>
     <body>
 
@@ -37,12 +37,14 @@
             </aside>
             <article>
                 <section class="tab-panel">
-                    <div class="add-tab-btn" id="addNewTab">+</div>
+
                     <div id="canvasTabSection">
+                        <div class="tab-btn" id="tab1">Tab 1</div>
                     </div>
+                    <div class="add-tab-btn" id="addNewTab">&#43;</div>
                 </section>
-                <div class = 'canvas-wrapper'>
-                    <canvas id= 'canvas1' width= '700px' height = '600px'></canvas>
+                <div class='canvas-wrapper' id="canvas-wrapper">
+                    <canvas id='canvas1' width= '1400px' height = '790px' class="canvas-tabs"></canvas>
                 </div>
             </article>
         </main>
@@ -59,5 +61,7 @@
         </footer>
     </div>
 
+
+    <script src ='script/script2.js'></script>
     </body>
 </html>

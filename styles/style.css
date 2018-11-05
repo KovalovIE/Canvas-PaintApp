@@ -24,8 +24,8 @@ main {
 .tab-panel {
     background: #19c8df;
     color: white;
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
 }
 
@@ -37,7 +37,7 @@ main {
     color: black;
     display: flex;
     align-items: center;
-    position: relative;
+    /*position: relative;*/
 }
 
 .add-tab-btn {
@@ -46,8 +46,8 @@ main {
     background: #ececec;
     line-height: 26px;
     margin-left: 10px;
-    position: absolute;
-    left: 650px;
+    /*position: absolute;*/
+    /*left: 650px;*/
 }
 .add-tab-btn:hover {
     background: darkgrey;
@@ -70,7 +70,7 @@ main {
 #canvasTabSection {
     display: flex;
     overflow-x: auto;
-    width: 650px;
+    max-width: 1350px;
     white-space: nowrap;
 }
 
@@ -155,3 +155,16 @@ footer div {
 .dropdown-content a:hover {background-color: #19c8df; cursor: pointer}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .btn {background-color: #19c8df;}
+
+#canvas1 {
+    background: lightyellow;
+}
+#canvas2 {
+    background: darkseagreen;
+}
+#canvas3 {
+    background: cadetblue;
+}
+.toggle-canvas {
+    display: none;
+}
