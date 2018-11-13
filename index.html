@@ -32,19 +32,28 @@
                         </li>
                         <li><button id="clear" class="btn">Clear</button></li>
                     </ul>
-
+                </div>
+                <div class="layer-panel">
+                    <button id="addNewLayer" class="btn" style="margin-left: 50px; width: 100px">Add Layer</button>
+                    <div class="layer-li-panel">
+                        <ul id="newLiForLayer">
+                            <li><input type="checkbox" id="inputlayer1canvas1" checked><label for="">Layer1</label></li>
+                        </ul>
+                    </div>
                 </div>
             </aside>
             <article>
                 <section class="tab-panel">
 
                     <div id="canvasTabSection">
-                        <div class="tab-btn" id="tab1">Tab1</div>
+                        <div class="tab-btn" id="tab1">Tab 1</div>
                     </div>
                     <div class="add-tab-btn" id="addNewTab">&#43;</div>
                 </section>
                 <div class='canvas-wrapper' id="canvas-wrapper">
-                    <canvas id='canvas1' width= '1400px' height = '790px' class="canvas-tabs"></canvas>
+                    <div style="position: relative;" width= '1400px' height = '790px' id="canvasWrap1">
+                        <canvas id='layer1canvas1' width= '1400px' height = '790px' class="canvas-tabs"></canvas>
+                    </div>
                 </div>
             </article>
         </main>

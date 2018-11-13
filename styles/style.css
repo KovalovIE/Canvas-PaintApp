@@ -18,6 +18,7 @@ body {
 
 main {
     display: flex;
+    height: 850px;
 }
 
 .aside-heading,
@@ -40,7 +41,8 @@ main {
     /*position: relative;*/
 }
 
-.add-tab-btn {
+.add-tab-btn,
+.add-layer-btn {
     width: 26px;
     height: 26px;
     background: #ececec;
@@ -49,7 +51,8 @@ main {
     /*position: absolute;*/
     /*left: 650px;*/
 }
-.add-tab-btn:hover {
+.add-tab-btn:hover,
+.add-layer-btn:hover {
     background: darkgrey;
     cursor: pointer;
 }
@@ -80,7 +83,8 @@ main {
     flex-direction: column;
 }
 
-.li-panel ul {
+.li-panel ul,
+.layer-li-panel ul {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -115,6 +119,15 @@ main {
     outline: none;
     box-shadow: inset 0px 0px 15px #c1c1c1;
 }
+.layer-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+/* .layer-li-panel {
+
+} */
 .footer {
     display: flex;
     background: yellow;
@@ -134,11 +147,16 @@ footer div {
     box-sizing: border-box;
     min-height: initial;
     min-width: initial;
+    position: relative;
 }
-/*.canvas-tabs {*/
-    /*width: 1400px;*/
-    /*height: 790px;*/
-/*}*/
+.canvas-tabs {
+    /* width: 1400px;
+    height: 790px; */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
 
 .dropdown {
     position: relative;
@@ -160,13 +178,13 @@ footer div {
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .btn {background-color: #19c8df;}
 
-#canvas1 {
+#layer1canvas1 {
     background: lightyellow;
 }
-#canvas2 {
+#layer1canvas2 {
     background: darkseagreen;
 }
-#canvas3 {
+#layer1canvas3 {
     background: cadetblue;
 }
 .toggle-canvas {
