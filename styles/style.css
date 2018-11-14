@@ -4,8 +4,9 @@
 }
 
 body {
-    min-width: 1600px;
-    min-height: 900px;
+    width: 1600px;
+    height: 950px;
+    border-right: 1px solid;
 }
 
 .header {
@@ -32,7 +33,7 @@ main {
 
 .tab-panel {
     background: white;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-top: none;
     box-sizing: border-box;
     color: black;
@@ -69,6 +70,9 @@ main {
     background: aqua;
     cursor: pointer;
 }
+.tab-btn:focus {
+    background-color: #19c8df;
+}
 
 #canvasTabSection {
     display: flex;
@@ -81,6 +85,7 @@ main {
     width: 200px;
     display: flex;
     flex-direction: column;
+    border-right: 1px solid;
 }
 
 .li-panel ul,
@@ -125,9 +130,11 @@ main {
     justify-content: center;
     margin-top: 30px;
 }
-/* .layer-li-panel {
-
-} */
+.layer-li-panel ul {
+    max-height: 398px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
 .footer {
     display: flex;
     background: yellow;
@@ -152,10 +159,13 @@ footer div {
 .canvas-tabs {
     /* width: 1400px;
     height: 790px; */
+    display: none;
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
+    border-top: 1px solid;
+    display: none;
 }
 
 .dropdown {

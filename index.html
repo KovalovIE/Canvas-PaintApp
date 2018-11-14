@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel='stylesheet' href='styles/style.css'>
-
+        
     </head>
     <body>
 
@@ -37,7 +37,7 @@
                     <button id="addNewLayer" class="btn" style="margin-left: 50px; width: 100px">Add Layer</button>
                     <div class="layer-li-panel">
                         <ul id="newLiForLayer">
-                            <li><input type="checkbox" id="inputlayer1canvas1" checked><label for="">Layer1</label></li>
+                            <li><input type="checkbox" id="inputlayer1canvas1" name="chboxs" onclick="showHideCanvas(event)"><label for="">Layer1</label></li>
                         </ul>
                     </div>
                 </div>
@@ -46,13 +46,13 @@
                 <section class="tab-panel">
 
                     <div id="canvasTabSection">
-                        <div class="tab-btn" id="tab1">Tab 1</div>
+                        <div class="tab-btn" id="tab1" tabindex="0">Tab 1</div>
                     </div>
                     <div class="add-tab-btn" id="addNewTab">&#43;</div>
                 </section>
                 <div class='canvas-wrapper' id="canvas-wrapper">
                     <div style="position: relative;" width= '1400px' height = '790px' id="canvasWrap1">
-                        <canvas id='layer1canvas1' width= '1400px' height = '790px' class="canvas-tabs"></canvas>
+                        <canvas id='layer1canvas1' width= '1400px' height = '790px' class="canvas-tabs" style="display: none;"></canvas>
                     </div>
                 </div>
             </article>
@@ -72,5 +72,7 @@
 
 
     <script src ='script/script2.js'></script>
+    <script src ='script/addTab.js'></script>
+    <script src ='script/addLayer.js'></script>
     </body>
 </html>
