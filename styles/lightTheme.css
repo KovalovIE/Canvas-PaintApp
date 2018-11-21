@@ -1,0 +1,80 @@
+.header {
+    background: yellow;
+}
+.dropdown-settings div:hover,
+.dropdown-settings button:hover {
+    background: #e8e8e8;
+}
+.fields-settings {
+    background: lightgrey;
+}
+.dropdown-container-theme,
+.dropdown-container-lang {
+    background: lightgrey;
+}
+.a-element-hover:hover {
+    background: #19c8df
+}
+.settings-btn-theme-lang {
+    background-color: lightgrey;
+    color: black;
+}
+.aside-heading,
+.tab-panel {
+    background: #19c8df;
+    color: white;
+}
+.tab-panel {
+    background: white;
+    color: black;
+}
+.add-tab-btn,
+.add-layer-btn {
+    background: #ececec;
+}
+.add-tab-btn:hover,
+.add-layer-btn:hover {
+    background: darkgrey;
+}
+.tab-btn {
+    background: #a0a1de;
+}
+.tab-btn:hover {
+    background: aqua;
+}
+.tab-btn:focus {
+    background-color: #19c8df;
+}
+.li-panel ul li input:first-child {
+    border-bottom: 1px solid #ccc;
+}
+.btn {
+    background: #19c8df;
+    color: white;
+}
+.btn-focus {
+    background: #e5e5e5;
+    box-shadow: inset 0px 0px 15px #c1c1c1;
+}
+.footer {
+    background: yellow;
+    border-top: 1px solid black;
+}
+.canvas-wrapper {
+    border: 1px solid black;
+}
+.dropdown-content {
+    background-color: #f1f1f1;
+}
+.dropdown-content a {
+    color: black;
+}
+.dropdown-content a:hover {
+    background-color: #19c8df;
+}
+.dropdown:hover .btn {
+    background-color: #19c8df;
+}
+.left-panel {
+    background: white
+}

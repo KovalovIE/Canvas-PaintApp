@@ -20,17 +20,29 @@ function addNewLayerFunc() {
     input.setAttribute('id', InputNumCanvasLayer);
     input.setAttribute('name', 'chboxs');
     input.addEventListener('click', showHideCanvas);
-    label.innerText = 'Layer' + ulSectionForLayer.children.length;
+    
+    if(document.getElementsByClassName('active-lang')[0].id === 'en') {
+        label.innerText = 'Layer' + ulSectionForLayer.children.length;
+    } else {
+        label.innerText = 'Слой' + ulSectionForLayer.children.length;
+    }
 
+    // label.innerText = 'Layer' + ulSectionForLayer.children.length;    
     numCanvasLayer = 'layer' + ulSectionForLayer.children.length + 'canvas' + parseInt(activeID);
-    //let aaa = localStorage.setItem('numCanvasLayer', numCanvasLayer);
+    let objKeyLang = numCanvasLayer + 'Lang';
+    label.setAttribute('id', objKeyLang);
+
     canvasLayer.setAttribute('id', numCanvasLayer);
     canvasLayer.setAttribute('width', '1400px');
     canvasLayer.setAttribute('height', '790px');
-    canvasLayer.classList.add('canvas-tabs');
-    
+    canvasLayer.classList.add('canvas-tabs');    
     canvasLayer.style.zIndex = parseInt(ulSectionForLayer.children.length);
     canvasLayer.setAttribute('style', 'display: none');
+
+    //добавление в объект для перевода 
+    let divTextRu = 'Слой' + ulSectionForLayer.children.length;
+    objLangEn[objKeyLang] = 'Layer' + ulSectionForLayer.children.length;
+    objLangRu[objKeyLang] = divTextRu;
 
     divAddCanvasLayer.setAttribute('width', '1400px');
     divAddCanvasLayer.setAttribute('height', '790px');    

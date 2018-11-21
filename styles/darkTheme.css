@@ -1,0 +1,88 @@
+.header {
+    background: #444444;
+}
+.dropdown-settings {
+    color: white;
+}
+.dropdown-settings div:hover,
+.dropdown-settings button:hover {
+    background: #4e4e4e;
+}
+.fields-settings {
+    background: rgb(70, 69, 69);
+}
+.dropdown-container-theme,
+.dropdown-container-lang {
+    background: rgb(70, 69, 69);
+}
+.a-element-hover:hover {
+    background: #4e4e4e;
+    color: white
+}
+.settings-btn-theme-lang {
+    background-color: #444444;
+    color: white;
+}
+.textH1Color {
+    color: white
+}
+.aside-heading,
+.tab-panel {
+    background: #14616b;
+    color: white;
+}
+.tab-panel {
+    background: #a09e9e;
+    color: black;
+}
+.add-tab-btn,
+.add-layer-btn {
+    background: #ececec;
+}
+.add-tab-btn:hover,
+.add-layer-btn:hover {
+    background: darkgrey;
+}
+.tab-btn {
+    background: #504f4f;
+    color: white;
+}
+.tab-btn:hover {
+    background: #14616b;
+}
+.tab-btn:focus {
+    background-color: #14616b;
+}
+.li-panel ul li input:first-child {
+    border-bottom: 1px solid #ccc;
+}
+.btn {
+    background: #14616b;
+    color: white;
+}
+.btn-focus {
+    background: #7068684b;
+    box-shadow: inset 0px 0px 15px #504f4f;
+}
+.footer {
+    background: #444444;
+    border-top: 1px solid black;
+}
+.canvas-wrapper {
+    border: 1px solid black;
+}
+.dropdown-content {
+    background-color: #504f4f;
+}
+.dropdown-content a {
+    color: black;
+}
+.dropdown-content a:hover {
+    background-color: #14616b;
+}
+.dropdown:hover .btn {
+    background-color: #14616b;
+}
+.left-panel {
+    background: #717171
+}

@@ -13,7 +13,19 @@ function addNewTabFunc() { //добавление новой tab с создан
     div.classList.add('tab-btn');
     div.setAttribute('tabindex', '0');
     div.innerText = 'Tab' + canvasTabSection.children.length;
+    if(document.getElementsByClassName('active-lang')[0].id === 'en') { //проверяем, на каком элементе класс и потом создаем на этом языке элементы
+        div.innerText = 'Tab' + canvasTabSection.children.length;
+    } else {
+        div.innerText = 'Вкладка' + canvasTabSection.children.length;
+    }
     let numDiv = 'div' + canvasTabSection.children.length;
+
+    //добавление в объект для перевода 
+    let divTextEn = 'Tab' + canvasTabSection.children.length
+    let divTextRu = 'Вкладка' + canvasTabSection.children.length;
+    objLangEn[numDiv] = divTextEn;
+    objLangRu[numDiv] = divTextRu;
+
     div.setAttribute('id', numDiv);
 
     wrapNumDiv = 'canvasWrap' + canvasTabSection.children.length;
@@ -26,8 +38,9 @@ function addNewTabFunc() { //добавление новой tab с создан
     canvas.classList.add('canvas-tabs');
     canvas.style.display = 'none';
 
-    // добавление нового canvas`а при создании tab в объект canvas`ов 
-    objCanvas[div.innerText] = [numCanvas];
+    // добавление нового canvas`а при создании tab в объект canvas`ов
+    let numCanvasEn = 'Tab' + canvasTabSection.children.length;
+    objCanvas[numCanvasEn] = [numCanvas];
     objCanvasJSON = JSON.stringify(objCanvas)
     localStorage.setItem('objCanvas', objCanvasJSON);
 
@@ -46,7 +59,20 @@ function addNewTabFunc() { //добавление новой tab с создан
     input.setAttribute('name', 'chboxs');
     input.addEventListener('click', showHideCanvas);
     label.innerText = 'Layer1';
-    input.addEventListener('click', checkboxCheckedType)
+    if(document.getElementsByClassName('active-lang')[0].id === 'en') { //проверяем, на каком элементе класс и потом создаем на этом языке элементы
+        label.innerText = 'Layer1';
+    } else {
+        label.innerText = 'Слой1';
+    }
+    input.addEventListener('click', checkboxCheckedType);
+
+    // id для label при создавнии нового Tab
+    let objKeyLang = 'layer1canvas' + canvasTabSection.children.length + 'Lang';
+    label.setAttribute('id', objKeyLang);
+    //добавление в объект для перевода 
+    //let divTextRu = 'Слой' + ulSectionForLayer.children.length;
+    objLangEn[objKeyLang] = 'Layer1';
+    objLangRu[objKeyLang] = 'Слой1';
     
     localStorage.setItem('canvas', numCanvas);
     addEventListeners(document.getElementById(numCanvas))

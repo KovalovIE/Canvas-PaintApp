@@ -79,6 +79,16 @@ function addEventListeners(canvas) {
     document.getElementById('addNewTab').addEventListener('click', addNewTabFunc);
 
     document.getElementById('addNewLayer').addEventListener('click', addNewLayerFunc);
+
+    document.getElementById('btnSettings').addEventListener('click', function() {
+        document.getElementById('fieldsSettings').style.display = 'block'
+    });
+
+    document.getElementById('closeSettings').addEventListener('click', function() {
+        document.getElementById('fieldsSettings').style.display = 'none'
+    });
+
+
 };
 
 function buttonPressed() {
@@ -236,7 +246,7 @@ function hexagonCanvasClick(event) {
 
 function showHideCanvas(e) {
     let thisCanvas1 = e.target.id;
-    thisCanvas = String(thisCanvas1.substr(5));
+    let thisCanvas = String(thisCanvas1.substr(5));
     let checkbox1 = document.getElementsByName("chboxs");
     let displayCanvas = "none";
     for(let i = 0; i < checkbox1.length; i++) { 

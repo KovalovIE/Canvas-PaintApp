@@ -1,17 +1,40 @@
 <html>
     <head>
         <link rel='stylesheet' href='styles/style.css'>
-        
+        <link rel='stylesheet' href='styles/lightTheme.css'>      
     </head>
     <body>
 
     <div>
         <header class="header">
-            <h1>Paint App</h1>
+            <button class="btn-settings" id="btnSettings">Settings</button>
+            <div class="fields-settings" id="fieldsSettings">
+                <div class="dropdown-settings">
+                    <div class="block-close-position">
+                        <span class="close-btn-position" id="closeSettings">[x]</span>
+                    </div>
+                    <div id="blockSettingsHeader">Settings</div>
+                    <div class="dropdown-settings-theme">
+                        <button class="settings-btn-theme-lang" id="themeTextHeader">Theme</button>
+                        <div class="dropdown-container-theme">
+                            <a id="light" onclick="changeTheme('light')" class="a-element-hover">Light</a>
+                            <a id="dark" onclick="changeTheme('dark')" class="a-element-hover">Dark</a>
+                        </div>
+                    </div>
+                    <div class="dropdown-settings-lang">
+                        <button class="settings-btn-theme-lang" id="langTextHeader">Lang</button>
+                        <div class="dropdown-container-lang">
+                            <a id="en" onclick="changeLang('en')" class="a-element-hover">EN</a>
+                            <a id="ru" onclick="changeLang('ru')" class="a-element-hover">RU</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 id="appTextHeader" class="textH1Color">Paint App</h1>
         </header>
         <main>
             <aside class="left-panel">
-                <div class="aside-heading">Control Panel</div>
+                <div class="aside-heading" id="controlPanelHeader">Control Panel</div>
                 <div class="li-panel">
                     <ul>
                         <li><input type="text" placeholder="Enter color" id="changeColor"></li>
@@ -22,7 +45,7 @@
                         </li>
                         <li>
                             <div class="dropdown">
-                                <button class="btn">Figure</button>
+                                <button class="btn" id="figureText">Figure</button>
                                 <div class="dropdown-content">
                                         <a id="square">Square</a>
                                         <a id="circle">Circle</a>
@@ -37,12 +60,12 @@
                     <button id="addNewLayer" class="btn" style="margin-left: 50px; width: 100px">Add Layer</button>
                     <div class="layer-li-panel">
                         <ul id="newLiForLayer">
-                            <li><input type="checkbox" id="inputlayer1canvas1" name="chboxs" onclick="showHideCanvas(event)"><label for="">Layer1</label></li>
+                            <li><input type="checkbox" id="inputlayer1canvas1" name="chboxs" onclick="showHideCanvas(event)"><label id="layer1">Layer1</label></li>
                         </ul>
                     </div>
                 </div>
             </aside>
-            <article>
+            <article style="width: 1400px">
                 <section class="tab-panel">
 
                     <div id="canvasTabSection">
@@ -58,21 +81,22 @@
             </article>
         </main>
         <footer class="footer">
-            <div>COLOR
+            <div id="blockColorText">COLOR
                 <span id="showColor" class="current-color" style="background: black;">: black</span>
             </div>
-            <div>MOUSE X
+            <div id="blockCoordMouseX">MOUSE X
                 <span id="mouseX"></span>
             </div>
-            <div>MOUSE Y
+            <div id="blockCoordMouseY">MOUSE Y
                 <span id="mouseY"></span>
             </div>
         </footer>
     </div>
 
 
-    <script src ='script/script2.js'></script>
-    <script src ='script/addTab.js'></script>
-    <script src ='script/addLayer.js'></script>
+    <script charset="utf-8" src ='script/script2.js'></script>
+    <script charset="utf-8" src ='script/addTab.js'></script>
+    <script charset="utf-8" src ='script/addLayer.js'></script>
+    <script charset="utf-8" src='script/colorThemeLang.js'></script>
     </body>
 </html>
