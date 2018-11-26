@@ -138,8 +138,8 @@ function mouseUpHandler(event) {
 }
 
 function getCoords() {
-    document.getElementById('mouseX').innerHTML = `: ${event.clientX}`;
-    document.getElementById('mouseY').innerHTML = `: ${event.clientY}`;
+    document.getElementById('mouseX').innerText = `: ${event.clientX}`;
+    document.getElementById('mouseY').innerText = `: ${event.clientY}`;
 }
 
 function updateSize() {

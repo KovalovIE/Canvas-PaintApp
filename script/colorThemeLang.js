@@ -26,7 +26,11 @@ let objLangEn = {
     btnSettings: 'Settings',
     blockSettingsHeader: 'Settings',
     themeTextHeader: 'Theme',
+    light: 'Light',
+    dark: 'Dark',
     langTextHeader: 'Lang',
+    en: 'EN',
+    ru: 'RU',
     appTextHeader: 'Paint App',
     controlPanelHeader: 'Control Panel',
     btnPressed: 'Pen',
@@ -47,7 +51,11 @@ let objLangRu = {
     btnSettings: 'Настройки',
     blockSettingsHeader: 'Настройки',
     themeTextHeader: 'Тема',
+    light: 'Светлая',
+    dark: 'Темная',
     langTextHeader: 'Язык',
+    en: 'Англ',
+    ru: 'Русс',
     appTextHeader: 'Рисовалка',
     controlPanelHeader: 'Панель',
     btnPressed: 'Кисть',
@@ -64,105 +72,24 @@ let objLangRu = {
     blockCoordMouseY: 'Мышь по Х'
 }
 
-let objHiddenElemEn = {
-    light: 'Light',
-    dark: 'Dark',
-    en: 'EN',
-    ru: 'RU'
-}
-let objHiddenElemRu = {
-    light: 'Светлая',
-    dark: 'Темная',
-    en: 'Англ',
-    ru: 'Русс'
-}
-
-
 function changeLang(id) {
-    let hiddenElement = document.querySelectorAll('a')
-
-    let arrEn = [];
-    for(let x in objHiddenElemEn) {
-        arrEn.push(objHiddenElemEn[x])
-    }
-
-    let arrRu = [];
-    for(let x in objHiddenElemRu) {
-        arrRu.push(objHiddenElemRu[x])
-    }
 
     switch(id) {
         case "en":
             for (let x in objLangEn) {
                 console.log(x, objLangEn[x])
-                document.getElementById(x).innerHTML = objLangEn[x];
+                document.getElementById(x).innerText = objLangEn[x];
             };
-            for (let i = 0; i < 4; i++) {
-                hiddenElement[i].text = arrEn[i]
-            }
             document.getElementById('en').classList.add('active-lang');
             document.getElementById('ru').classList.remove('active-lang');
 			break;
 		case "ru":
             for (let x in objLangRu) {
                 console.log(x, objLangRu[x])
-                document.getElementById(x).innerHTML = objLangRu[x];
+                document.getElementById(x).innerText = objLangRu[x];
             };
-            for (let i = 0; i < 4; i++) {
-                hiddenElement[i].text = arrRu[i];
-                console.log(hiddenElement[i])
-            }
             document.getElementById('en').classList.remove('active-lang');
             document.getElementById('ru').classList.add('active-lang');
 			break;
     }
-    console.log(hiddenElement)
 }
-
-function activeLang() {
-    ;
-    document.getElementById('ru')
-}
-
-
-// let objHiddenElemEn = {
-//     light: 'Light',
-//     dark: 'Dark',
-//     en: 'EN',
-//     ru: 'RU'
-// }
-// let objHiddenElemRu = {
-//     light: 'Светлая',
-//     dark: 'Темная',
-//     en: 'Англ',
-//     ru: 'Русс'
-// }
-document.getElementById('blockSettingsHeader').addEventListener('click', function() {
-    console.log(document.querySelectorAll('a'));
-})
-// function changeLangHiddenElem(element) {
-//     //var element = event.target.id;
-//     let hiddenElement = document.querySelectorAll('a')
-//     let arrEn = [];
-//     for(let x in objHiddenElemEn) {
-//         arrEn.push(objHiddenElemEn[x])
-//     }
-//     let arrRu = [];
-//     for(let x in objHiddenElemRu) {
-//         arrRu.push(objHiddenElemRu[x])
-//     }
-//     switch(element) {
-//         case "en":
-//             for (let i = 0; i < hiddenElement.length-3; i++) {
-//                 console.log(hiddenElement[i].text = arrEn[i])
-//                 //document.getElementById(String(x)).innerHTML = objLangEn[x];
-//             }
-// 			break;
-// 		case "ru":
-//             for (let i = 0; i < hiddenElement.length-3; i++) {
-//                 console.log(hiddenElement[i].text = arrRu[i])
-//                 //document.getElementById(String(x)).innerHTML = objLangRu[x];
-//             }
-// 			break;
-//     }
-// }
